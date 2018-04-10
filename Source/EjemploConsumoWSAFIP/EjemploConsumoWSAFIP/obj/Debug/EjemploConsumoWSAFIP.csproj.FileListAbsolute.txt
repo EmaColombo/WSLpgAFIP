@@ -5,3 +5,10 @@ c:\users\ema_c\documents\visual studio 2017\Projects\EjemploConsumoWSAFIP\Ejempl
 c:\users\ema_c\documents\visual studio 2017\Projects\EjemploConsumoWSAFIP\EjemploConsumoWSAFIP\obj\Debug\EjemploConsumoWSAFIP.pdb
 c:\users\ema_c\documents\visual studio 2017\Projects\EjemploConsumoWSAFIP\EjemploConsumoWSAFIP\obj\Debug\EjemploConsumoWSAFIP.csprojResolveAssemblyReference.cache
 C:\Users\ema_c\Documents\Visual Studio 2017\Projects\EjemploConsumoWSAFIP\EjemploConsumoWSAFIP\obj\Debug\EjemploConsumoWSAFIP.csproj.CoreCompileInputs.cache
+C:\Users\ema_c\Documents\Visual Studio 2017\Projects\Git\Source\EjemploConsumoWSAFIP\EjemploConsumoWSAFIP\bin\Debug\EjemploConsumoWSAFIP.exe.config
+C:\Users\ema_c\Documents\Visual Studio 2017\Projects\Git\Source\EjemploConsumoWSAFIP\EjemploConsumoWSAFIP\bin\Debug\EjemploConsumoWSAFIP.exe
+C:\Users\ema_c\Documents\Visual Studio 2017\Projects\Git\Source\EjemploConsumoWSAFIP\EjemploConsumoWSAFIP\bin\Debug\EjemploConsumoWSAFIP.pdb
+C:\Users\ema_c\Documents\Visual Studio 2017\Projects\Git\Source\EjemploConsumoWSAFIP\EjemploConsumoWSAFIP\obj\Debug\EjemploConsumoWSAFIP.csprojResolveAssemblyReference.cache
+C:\Users\ema_c\Documents\Visual Studio 2017\Projects\Git\Source\EjemploConsumoWSAFIP\EjemploConsumoWSAFIP\obj\Debug\EjemploConsumoWSAFIP.csproj.CoreCompileInputs.cache
+C:\Users\ema_c\Documents\Visual Studio 2017\Projects\Git\Source\EjemploConsumoWSAFIP\EjemploConsumoWSAFIP\obj\Debug\EjemploConsumoWSAFIP.exe
+C:\Users\ema_c\Documents\Visual Studio 2017\Projects\Git\Source\EjemploConsumoWSAFIP\EjemploConsumoWSAFIP\obj\Debug\EjemploConsumoWSAFIP.pdb

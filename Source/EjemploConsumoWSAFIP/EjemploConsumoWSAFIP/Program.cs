@@ -25,12 +25,12 @@ namespace EjemploConsumoWSAFIP
             var auth = new WSLpg.LpgAuthType();
 
             //ESTOS SON VALORES DE EJEMPLO HARDCODEADOS PARA TESTEAR QUE FUNCIONE ESTA APLICACION. ACÁ SE DEBE BUSCAR DESDE BD SI EXISTE ALGUN TICKET VALIDO PARA USAR 
-            string tokenObtenido = "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgc3JjPSJDTj13c2FhaG9tbywgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgdW5pcXVlX2lkPSIxNjEwMzc1NjU2IiBnZW5fdGltZT0iMTUyMzAxOTI0OSIgZXhwX3RpbWU9IjE1MjMwNjI1MDkiLz4KICAgIDxvcGVyYXRpb24gdHlwZT0ibG9naW4iIHZhbHVlPSJncmFudGVkIj4KICAgICAgICA8bG9naW4gZW50aXR5PSIzMzY5MzQ1MDIzOSIgc2VydmljZT0id3NscGciIHVpZD0iU0VSSUFMTlVNQkVSPUNVSVQgMjAyMDQ4NTkwNDQsIENOPXdzbHBnIiBhdXRobWV0aG9kPSJjbXMiIHJlZ21ldGhvZD0iMjIiPgogICAgICAgICAgICA8cmVsYXRpb25zPgogICAgICAgICAgICAgICAgPHJlbGF0aW9uIGtleT0iMzA1MDAwNDk0NjAiIHJlbHR5cGU9IjQiLz4KICAgICAgICAgICAgPC9yZWxhdGlvbnM+CiAgICAgICAgPC9sb2dpbj4KICAgIDwvb3BlcmF0aW9uPgo8L3Nzbz4K";
-            string signObtenido = "ch8tmwPCY+q7W4fAPXEjEFdBs6ogaPAi3i55SRFZj1O0nLvymPv4vo+kx/sVn4tN3b5i7zWrSb6MQ5uIwoiQCjxYyFIXmquFhcEUzSaTcUWbRAPCkzowip3BksMenhnyF3Da9dkImVIkzvY/JA9H0DVJSn5p/g9CqEhoZZR+3dE=";
+            string tokenObtenido = "";
+            string signObtenido = "";
             DateTime fechaExpiracion = Convert.ToDateTime("06/04/2018 22:44:00");
 
             //CUIT de quien se está conectando al Web Service (es el cuit que se puso cuando se creó el certificado digital)
-            auth.cuit = 30500049460; //CUIT de SanCor 30-50004946-0
+            auth.cuit = 0;
 
 
 
@@ -101,7 +101,7 @@ namespace EjemploConsumoWSAFIP
             liquidacion.contProteicoSpecified = true;
             liquidacion.comisionCorredor = 0;
             liquidacion.comisionCorredorSpecified = false;
-            liquidacion.cuitComprador = 30500049460;
+            liquidacion.cuitComprador = 0;
             liquidacion.cuitCorredor = 20111111112;
             liquidacion.cuitCorredorSpecified = false;
             liquidacion.cuitVendedor = 20111111112;
@@ -114,9 +114,9 @@ namespace EjemploConsumoWSAFIP
             liquidacion.esLiquidacionPropiaSpecified = true;
             liquidacion.esLiquidacionPropia = WSLpg.LpgSiNoType.N;
             liquidacion.nroActComprador = 29;
-            liquidacion.nroIngBrutoComprador = 9217407193;
+            liquidacion.nroIngBrutoComprador = 0;
             liquidacion.nroIngBrutoCorredor = 1006;
-            liquidacion.nroIngBrutoVendedor = 9213869965;
+            liquidacion.nroIngBrutoVendedor = 0;
             liquidacion.nroOrden = webServiceClient.liquidacionUltimoNroOrdenConsultar(auth, 1).nroOrden + 1;
 
             liquidacion.pesoNetoSinCertificado = 20000;
@@ -180,12 +180,12 @@ namespace EjemploConsumoWSAFIP
             liquidacionSec.cuitComprador = 20111111112;
             liquidacionSec.cuitCorredor = 20111111112; //Pongo el cuit pero en la linea de abajo indico que no se usa
             liquidacionSec.cuitCorredorSpecified = false;
-            liquidacionSec.cuitVendedor = 30500049460;
+            liquidacionSec.cuitVendedor = 0;
             liquidacionSec.fechaPrecioOperacion = Convert.ToDateTime("31/01/2018");
             liquidacionSec.liquidaCorredor = WSLpg.LpgSiNoType.N;
-            liquidacionSec.nroIngBrutoComprador = 0610053252;
+            liquidacionSec.nroIngBrutoComprador = 0;
             //liquidacionSec.nroIngBrutoCorredor = 1006;
-            liquidacionSec.nroIngBrutoVendedor = 9217407193;
+            liquidacionSec.nroIngBrutoVendedor = 0;
             liquidacionSec.nroOrden = 5;
             liquidacionSec.precioOperacion = 2600;
             liquidacionSec.precioRefTn = 2600;
@@ -216,7 +216,7 @@ namespace EjemploConsumoWSAFIP
             cabecera.cuitDepositante = 20111111112;
             cabecera.cuitDepositanteSpecified = true;
             cabecera.nroIngBrutoDepositanteSpecified = true;
-            cabecera.nroIngBrutoDepositante = 9213869965;
+            cabecera.nroIngBrutoDepositante = 0;
             cabecera.nroOrden = 7;
             cabecera.ptoEmision = 5;
             cabecera.titularGrano = WSLpg.CgTipoTitularGranoType.T;
