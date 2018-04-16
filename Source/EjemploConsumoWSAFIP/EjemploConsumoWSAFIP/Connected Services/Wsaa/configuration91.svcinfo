@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="REUqHWMLoHxq86vwj86v7Z53h+M=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="FyYVrvaLFrgupmyqAyEMuNUuFwQ=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="LoginCmsSoapBinding">
       <properties>
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="LoginCms" contract="Wsaa.LoginCMS" bindingType="basicHttpBinding" address="https://wsaahomo.afip.gov.ar/ws/services/LoginCms" bindingConfiguration="LoginCmsSoapBinding">
+    <endpoint name="LoginCms" contract="Wsaa.LoginCMS" bindingType="basicHttpBinding" address="https://wsaa.afip.gov.ar/ws/services/LoginCms" bindingConfiguration="LoginCmsSoapBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://wsaahomo.afip.gov.ar/ws/services/LoginCms</serializedValue>
+          <serializedValue>https://wsaa.afip.gov.ar/ws/services/LoginCms</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -15,7 +15,7 @@ namespace EjemploConsumoWSAFIP.Wsaa {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LoginFault", Namespace="https://wsaahomo.afip.gov.ar/ws/services/LoginCms")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LoginFault", Namespace="https://wsaa.afip.gov.ar/ws/services/LoginCms")]
     [System.SerializableAttribute()]
     public partial class LoginFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -43,10 +43,10 @@ namespace EjemploConsumoWSAFIP.Wsaa {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="https://wsaahomo.afip.gov.ar/ws/services/LoginCms", ConfigurationName="Wsaa.LoginCMS")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="https://wsaa.afip.gov.ar/ws/services/LoginCms", ConfigurationName="Wsaa.LoginCMS")]
     public interface LoginCMS {
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el espacio de nombres de contenedor (http://wsaa.view.sua.dvadac.desein.afip.gov) del mensaje loginCmsRequest no coincide con el valor predeterminado (https://wsaahomo.afip.gov.ar/ws/services/LoginCms)
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el espacio de nombres de contenedor (http://wsaa.view.sua.dvadac.desein.afip.gov) del mensaje loginCmsRequest no coincide con el valor predeterminado (https://wsaa.afip.gov.ar/ws/services/LoginCms)
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(EjemploConsumoWSAFIP.Wsaa.LoginFault), Action="", Name="fault")]
         EjemploConsumoWSAFIP.Wsaa.loginCmsResponse loginCms(EjemploConsumoWSAFIP.Wsaa.loginCmsRequest request);

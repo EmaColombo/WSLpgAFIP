@@ -51,11 +51,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\WSLpgProd\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WSLpg\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Datos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,7 +72,233 @@
     <None Include="Connected Services\Wsaa\EjemploConsumoWSAFIP.Wsaa.loginCmsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\Wsaa\LoginCms.wsdl" />
+    <None Include="Connected Services\Wsaa\LoginCms1.wsdl" />
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.ajustePorContratoConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.ajusteXCoeConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.ajusteXNroOrdenConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.asociarLiquidacionAContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.campaniasConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.cgAutorizarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.CgAutorizarReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.cgBuscarCertConSaldoDisponibleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.CgBuscarCertConSaldoDisponibleReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.cgBuscarCtgResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.CgBuscarCtgReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.cgConfirmarAnulacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.CgConsultarReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.cgConsultarUltimoNroOrdenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.cgConsultarXCoeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.cgConsultarXNroOrdenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.cgInformarCalidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.cgSolicitarAnulacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.CgSolicitarAnulacionReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.codigoGradoEntregadoXTipoGranoConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.codigoGradoReferenciaConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.dummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.liquidacionAjustarContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.liquidacionAjustarUnificadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.liquidacionAnularResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.liquidacionAutorizarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.liquidacionPorContratoConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.liquidacionUltimoNroOrdenConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.liquidacionXCoeConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.liquidacionXNroOrdenConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.localidadXProvinciaConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgAjusteConsReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgAjusteContratoReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgAjusteUnificadoReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgAnulacionReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lpgAutorizarAnticipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgCampaniaReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lpgCancelarAnticipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgGradoEntReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgGradoRefReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgLiqConsReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgLiqPorContratoConsReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgLiqReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgLiqUltNroOrdenReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgLocalidadesReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgProvinciasReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgPuertoReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgTipoActividadReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgTipoCertDepReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgTipoDeduccionReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgTipoGranoReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgTipoOperacionReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LpgTipoRetencionReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LsgAjustarXCoeContratoReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lsgAjustarXCoeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lsgAjustarXContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lsgAnularResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lsgAsociarAContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lsgAutorizarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LsgConsultaReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lsgConsultarUltimoNroOrdenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lsgConsultarXCoeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lsgConsultarXContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.lsgConsultarXNroOrdenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.LsgReturnType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.provinciasConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.puertoConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.returnDummyRespType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.tipoActividadConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.tipoActividadRepresentadoConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.tipoCertificadoDepositoConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.tipoDeduccionConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.tipoGranoConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.tipoOperacionXActividadConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\EjemploConsumoWSAFIP.WSLpgProd.tipoRetencionConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSLpgProd\wslpg.wsdl" />
     <None Include="Connected Services\WSLpg\EjemploConsumoWSAFIP.WSLpg.ajustePorContratoConsultarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -299,6 +531,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\Wsaa\" />
+    <WCFMetadataStorage Include="Connected Services\WSLpgProd\" />
     <WCFMetadataStorage Include="Connected Services\WSLpg\" />
   </ItemGroup>
   <ItemGroup>
@@ -321,6 +554,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\WSLpg\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSLpgProd\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSLpgProd\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSLpgProd\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

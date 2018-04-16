@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://wsaahomo.afip.gov.ar/ws/services/LoginCms?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://wsaa.afip.gov.ar/ws/services/LoginCms?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LoginCms.wsdl" MetadataType="Wsdl" ID="be7071ee-87c9-47e5-bbb5-9e36de4b8b27" SourceId="1" SourceUrl="https://wsaahomo.afip.gov.ar/ws/services/LoginCms?wsdl" />
+    <MetadataFile FileName="LoginCms1.wsdl" MetadataType="Wsdl" ID="fcd1e939-0e54-499a-9094-dfbf9773f5db" SourceId="1" SourceUrl="https://wsaa.afip.gov.ar/ws/services/LoginCms?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

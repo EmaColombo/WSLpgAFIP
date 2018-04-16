@@ -1,10 +1,12 @@
 ﻿using ConsumoWSAFIP;
 using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace EjemploConsumoWSAFIP
 {
@@ -22,15 +24,15 @@ namespace EjemploConsumoWSAFIP
             string DEFAULT_URLWSAAWSDL = string.Format(wsaaClient.Endpoint.Address.Uri.ToString() + "{0}", "?wsdl"); //Toma la URL del Web Service WSAA para pasar como parámetro
             
             //TICKET DE ACCESO A WEB SERVICES
-            var auth = new WSLpg.LpgAuthType();
+            var auth = new WSLpgProd.LpgAuthType();
 
             //ESTOS SON VALORES DE EJEMPLO HARDCODEADOS PARA TESTEAR QUE FUNCIONE ESTA APLICACION. ACÁ SE DEBE BUSCAR DESDE BD SI EXISTE ALGUN TICKET VALIDO PARA USAR 
-            string tokenObtenido = "";
-            string signObtenido = "";
-            DateTime fechaExpiracion = Convert.ToDateTime("06/04/2018 22:44:00");
+            string tokenObtenido = "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgc3JjPSJDTj13c2FhLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiB1bmlxdWVfaWQ9IjMzODE2MzgyMTciIGdlbl90aW1lPSIxNTIzODc4NTM4IiBleHBfdGltZT0iMTUyMzkyMTc5OCIvPgogICAgPG9wZXJhdGlvbiB0eXBlPSJsb2dpbiIgdmFsdWU9ImdyYW50ZWQiPgogICAgICAgIDxsb2dpbiBlbnRpdHk9IjMzNjkzNDUwMjM5IiBzZXJ2aWNlPSJ3c2xwZyIgdWlkPSJTRVJJQUxOVU1CRVI9Q1VJVCAzMDUwMDA0OTQ2MCwgQ049Z3Jhbm9zIDIwMTgiIGF1dGhtZXRob2Q9ImNtcyIgcmVnbWV0aG9kPSIyMiI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24ga2V5PSIzMDUwMDA0OTQ2MCIgcmVsdHlwZT0iNCIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgo=";
+            string signObtenido = "pNXXJQOWXnxMIK2pV8LketmcghnluO994QSZ0ws/t4ARsWADCageO3qYqMzSwLuL2z3tDSZWBxlXHO9g0LtFA3fo1IBFUzE8Jl7J16iOdmNYIBRMh/nzt6EatDPB+8CooaMc7v4CKoT+TgpXTFbPk+Q0jU+yKe/ujvK+6UQ79A8=";
+            DateTime fechaExpiracion = Convert.ToDateTime("16/04/2018 22:44:00");
 
             //CUIT de quien se está conectando al Web Service (es el cuit que se puso cuando se creó el certificado digital)
-            auth.cuit = 0;
+            auth.cuit = 30500049460;
 
 
 
@@ -42,7 +44,7 @@ namespace EjemploConsumoWSAFIP
             else //NO EXISTE TICKET ACTIVO Y VALIDO. SE DEBE VOLVER A CONSUMIR EL WEB SERVICE WSAA PARA OBTENER NUEVO ACCESO
             {
                 Autenticacion.LoginTicket ticket = new Autenticacion.LoginTicket(); //Clase desde donde se consume el WSAA.
-                string serialCertificado = "2182408960951dd6"; //ESTE VALOR DEBERÍA SER GUARDADO Y OBTENIDO DESDE BD. ES EL SERIAL DEL CERTIFICADO DIGITAL
+                string serialCertificado = "4a9820a3bc2db7f8"; //ESTE VALOR DEBERÍA SER GUARDADO Y OBTENIDO DESDE BD. ES EL SERIAL DEL CERTIFICADO DIGITAL
                 TicketResponse resultado = ticket.ObtenerLoginTicketResponse(DEFAULT_SERVICIO, DEFAULT_URLWSAAWSDL, "", DEFAULT_VERBOSE, serialCertificado);
                 //NUEVO TICKET DE ACCESO VALIDO POR 12 HORAS. GUARDAR EN BD Y UTILIZARLO HASTA QUE EXPIRE
                 auth.token = resultado.Token; 
@@ -59,8 +61,9 @@ namespace EjemploConsumoWSAFIP
             try
             {
                 var webServiceClient = new WSLpg.LpgPortTypeClient(); //INSTANCIA DE CLIENTE PARA CONSUMIR METODOS
+                var client = new WSLpgProd.LpgPortTypeClient();
 
-                var estadoServicios = webServiceClient.dummy(); //DUMMY() ES EL METODO PARA CONSULTAR ESTADO DE SERVIDORES DE AFIP. ES EL UNICO QUE NO RECIBE PARAMETROS
+                var estadoServicios = client.dummy(); //DUMMY() ES EL METODO PARA CONSULTAR ESTADO DE SERVIDORES DE AFIP. ES EL UNICO QUE NO RECIBE PARAMETROS
 
                 if(estadoServicios.appserver == "OK" && estadoServicios.authserver == "OK" && estadoServicios.dbserver == "OK")
                 {
@@ -70,12 +73,51 @@ namespace EjemploConsumoWSAFIP
                     //bool cg = program.Certificado(auth, webServiceClient);
                     //bool ajusteunificado = program.AjusteUnificado(auth, webServiceClient);
                     //bool ajusteliquidacionsecundaria = program.AjusteLiquidacionSecundaria(auth, webServiceClient);
+
+
+                    //GenerateXML(auth, coe, client, program);
+                    //var resultado = client.liquidacionXCoeConsultar(auth, 330110040403, WSLpgProd.LpgSiNoType.S);
+                    //String xml = program.ToXML(resultado);
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        private static bool GenerateXML(WSLpgProd.LpgAuthType auth, long coe, WSLpgProd.LpgPortTypeClient client, Program program)
+        {
+            List<Datos> ListaCOE = new List<Datos>();
+            string xml = System.IO.File.ReadAllText(@"D:\CABL\Proyecto SAP\GHU\WS AFIP Granos\COE Produccion xml.xml");
+            var result = program.LoadFromXMLString(xml);
+            var ListaResult = result.Items.ToList();
+            foreach (var item in ListaResult)
+            {
+                string Metodo = item.Metodo.Replace(" ", "").Replace("\t", "");
+
+                coe = Convert.ToInt64(item.COE.Replace(" ", ""));
+                if (Metodo == "liquidacionXCoeConsultar")
+                {
+                    var liquidacion = client.liquidacionXCoeConsultar(auth, coe, WSLpgProd.LpgSiNoType.N);
+                    String xmlSalida = program.ToXML(liquidacion);
+                    File.WriteAllText(String.Format("D:\\CABL\\Proyecto SAP\\GHU\\WS AFIP Granos\\XML Prod\\Liquidacion Primaria {0}.xml", coe.ToString()), xmlSalida);
+                }
+                if (Metodo == "ajusteXCoeConsultar")
+                {
+                    var liquidacion = client.ajusteXCoeConsultar(auth, coe, WSLpgProd.LpgSiNoType.N);
+                    String xmlSalida = program.ToXML(liquidacion);
+                    File.WriteAllText(String.Format("D:\\CABL\\Proyecto SAP\\GHU\\WS AFIP Granos\\XML Prod\\Ajuste Liquidacion Primaria {0}.xml", coe.ToString()), xmlSalida);
+                }
+                if (Metodo == "lsgXCoeConsultar")
+                {
+                    var liquidacion = client.lsgConsultarXCoe(auth, coe, WSLpgProd.LpgSiNoType.N);
+                    String xmlSalida = program.ToXML(liquidacion);
+                    File.WriteAllText(String.Format("D:\\CABL\\Proyecto SAP\\GHU\\WS AFIP Granos\\XML Prod\\Liquidacion Secundaria {0}.xml", coe.ToString()), xmlSalida);
+                }
+            }
+
+            return true;
         }
 
         public bool LiquidacionPrimaria(WSLpg.LpgAuthType auth, WSLpg.LpgPortTypeClient webServiceClient)
@@ -155,11 +197,11 @@ namespace EjemploConsumoWSAFIP
             deduccion.precioPKGdiarioSpecified = false;
             ListaDeducciones.Add(deduccion);
 
-            var resultadoinvocacion = webServiceClient.liquidacionAutorizar(auth, liquidacion, ListaDeducciones.ToArray(), null, null);
+            //var resultadoinvocacion = webServiceClient.liquidacionAutorizar(auth, liquidacion, ListaDeducciones.ToArray(), null, null);
 
-            long COElpg = 330100046270;
-            var liquidacionResponse = webServiceClient.liquidacionXCoeConsultar(auth, COElpg, WSLpg.LpgSiNoType.S); //Liquidacion primaria
-            File.WriteAllBytes(String.Format("D:\\CABL\\Proyecto SAP\\GHU\\WS AFIP Granos\\LPG {0}.pdf", COElpg.ToString()), liquidacionResponse.pdf);
+            //long COElpg = 330100046270;
+            //var liquidacionResponse = webServiceClient.liquidacionXCoeConsultar(auth, COElpg, WSLpg.LpgSiNoType.S); //Liquidacion primaria
+            //File.WriteAllBytes(String.Format("D:\\CABL\\Proyecto SAP\\GHU\\WS AFIP Granos\\LPG {0}.pdf", COElpg.ToString()), liquidacionResponse.pdf);
             return true;
         }
 
@@ -392,11 +434,27 @@ namespace EjemploConsumoWSAFIP
             ajustecreditoSecundaria.importeAjustar21Specified = false;
 
             long COElsg = 331000008509;
-            var ajusteliquidacionsecundaria = webServiceClient.lsgAjustarXCoe(auth, COElsg, 6, 3, 15292, 20, ajustecreditoSecundaria, null, null);
-            var liquidacionSecundariaResponse = webServiceClient.lsgConsultarXCoe(auth, 331000008511, WSLpg.LpgSiNoType.S); //Liquidacion secundaria
-            File.WriteAllBytes(String.Format("D:\\CABL\\Proyecto SAP\\GHU\\WS AFIP Granos\\Ajuste Liquidacion Secundaria Parcial {0}.pdf", 331000008511.ToString()), liquidacionSecundariaResponse.pdf);
+            //var ajusteliquidacionsecundaria = webServiceClient.lsgAjustarXCoe(auth, COElsg, 6, 3, 15292, 20, ajustecreditoSecundaria, null, null);
+            //var liquidacionSecundariaResponse = webServiceClient.lsgConsultarXCoe(auth, 331000008511, WSLpg.LpgSiNoType.S); //Liquidacion secundaria
+            //File.WriteAllBytes(String.Format("D:\\CABL\\Proyecto SAP\\GHU\\WS AFIP Granos\\Ajuste Liquidacion Secundaria Parcial {0}.pdf", 331000008511.ToString()), liquidacionSecundariaResponse.pdf);
 
             return true;
         }
+
+        public string ToXML(object resultado)
+        {
+            var stringwriter = new System.IO.StringWriter();
+            var serializer = new XmlSerializer(resultado.GetType());
+            serializer.Serialize(stringwriter, resultado);
+            return stringwriter.ToString();
+        }
+
+        public Datos LoadFromXMLString(string xmlText)
+        {
+            var stringReader = new System.IO.StringReader(xmlText);
+            var serializer = new XmlSerializer(typeof(Datos));
+            return serializer.Deserialize(stringReader) as Datos;
+        }
     }
+
 }
